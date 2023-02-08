@@ -76,3 +76,9 @@ body {
   cursor: pointer;
   color: hsl(213, 96%, 18%);
 }
+
+@media (max-width: 677px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,25 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Form from "./Form";
 import Plan from "./Plan";
 import AddOns from "./AddOns";
 import Summary from "./Summary";
 
 import "./MainContainer.css";
+import { AppContext } from "../context/app-context";
 
 const MainContainer = () => {
+  const appCtx = useContext(AppContext);
+  const { currentPage, nextStepHandler, backStepHandler } = appCtx;
   const currentButton = [1, 2, 3, 4];
-  const [currentPage, setcurrentPage] = useState(0);
-
-  const nextStepHandler = () => {
-    setcurrentPage((prevPage) => prevPage + 1);
-    if (currentPage === 3) {
-      setcurrentPage(0);
-    }
-  };
-
-  const backStepHandler = () => {
-    setcurrentPage((prevPage) => prevPage - 1);
-  };
 
   const confirmHandler = () => {
     alert("Success confirm");

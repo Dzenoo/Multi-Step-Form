@@ -30,7 +30,7 @@ const Summary = () => {
         <div className="plan_wrapper">
           <div className="wrapper_text">
             <h3>{planName}</h3>
-            <a href="">Change</a>
+            <a onClick={() => appCtx.setcurrentPage(1)}>Change</a>
           </div>
           <p>{planPrice}</p>
         </div>

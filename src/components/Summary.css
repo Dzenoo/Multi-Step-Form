@@ -20,6 +20,13 @@
 }
 
 .totalPrice {
+  float: right;
   font-size: 26px;
   color: hsl(243, 100%, 62%) !important;
+}
+
+a {
+  color: hsl(243, 100%, 62%);
+  text-decoration: underline;
+  cursor: pointer;
 }
