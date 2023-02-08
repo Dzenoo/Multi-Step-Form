@@ -21,6 +21,10 @@ const MainContainer = () => {
     setcurrentPage((prevPage) => prevPage - 1);
   };
 
+  const confirmHandler = () => {
+    alert("Success confirm");
+  };
+
   return (
     <div className="container">
       <div className="info_section">
@@ -70,7 +74,11 @@ const MainContainer = () => {
         <div className="button">
           {!currentPage > 0 && <div></div>}
           {currentPage > 0 && <span onClick={backStepHandler}>Go back</span>}
-          <button onClick={nextStepHandler}>Next Step</button>
+          <button
+            onClick={currentPage === 3 ? confirmHandler : nextStepHandler}
+          >
+            {currentPage === 3 ? "Confirm" : "Next Step"}
+          </button>
         </div>
       </div>
     </div>

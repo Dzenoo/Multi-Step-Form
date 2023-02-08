@@ -1,0 +1,25 @@
+.wrapper {
+  background-color: hsl(217, 100%, 97%);
+  padding: 30px;
+  border-radius: 13px;
+}
+
+.plan_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plan_wrapper h3 {
+  color: hsl(213, 96%, 18%);
+}
+
+.plan_wrapper p {
+  color: hsl(213, 96%, 18%);
+  font-size: 24px;
+}
+
+.totalPrice {
+  font-size: 26px;
+  color: hsl(243, 100%, 62%) !important;
+}
