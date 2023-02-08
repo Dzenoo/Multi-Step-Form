@@ -1,0 +1,64 @@
+.container h1 {
+  color: hsl(213, 96%, 18%);
+  font-weight: bold;
+  font-size: 38px;
+}
+
+.container p {
+  color: hsl(231, 11%, 63%);
+  font-weight: 600;
+}
+
+.container .inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1em;
+}
+
+.container .inputs label {
+  color: hsl(213, 96%, 18%);
+  font-weight: 600;
+}
+
+.container .inputs input {
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid hsl(231, 11%, 63%);
+}
+
+.container .inputs input:focus {
+  border: 1px solid hsl(213, 96%, 18%);
+}
+
+.container button {
+  background-color: hsl(213, 96%, 18%);
+  color: #fff;
+  border-radius: 12px;
+  font-weight: bold;
+  border: none;
+  padding: 20px;
+  cursor: pointer;
+  width: 28%;
+}
+
+.container button:hover {
+  background-color: hsl(243, 100%, 62%);
+}
+
+.container .button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.control p {
+  color: red !important;
+}

@@ -1,36 +1,60 @@
 import React, { useState } from "react";
+import Form from "./Form";
+import Plan from "./Plan";
+import AddOns from "./AddOns";
+import Summary from "./Summary";
 
 import "./MainContainer.css";
 
 const MainContainer = () => {
-  const [currentButton, setCurrentButton] = useState([1, 2, 3, 4]);
+  const currentButton = [1, 2, 3, 4];
+  const [currentPage, setcurrentPage] = useState(0);
+
+  const nextStepHandler = () => {
+    setcurrentPage((prevPage) => prevPage + 1);
+    if (currentPage === 3) {
+      setcurrentPage(0);
+    }
+  };
+
+  const backStepHandler = () => {
+    setcurrentPage((prevPage) => prevPage - 1);
+  };
 
   return (
     <div className="container">
       <div className="info_section">
         <div className="button_div">
-          <button>{currentButton[0]}</button>
+          <button className={`${currentPage === 0 ? "active" : ""} `}>
+            {currentButton[0]}
+          </button>
           <div className="btn_text">
             <p>STEP 1</p>
             <h1>Your info</h1>
           </div>
         </div>
         <div className="button_div">
-          <button>{currentButton[1]}</button>
+          <button className={`${currentPage === 1 ? "active" : ""}`}>
+            {currentButton[1]}
+          </button>
           <div className="btn_text">
             <p>STEP 2</p>
             <h1>Select Plan</h1>
           </div>
         </div>
         <div className="button_div">
-          <button>{currentButton[2]}</button>
+          <button className={`${currentPage === 2 ? "active" : ""}`}>
+            {currentButton[2]}
+          </button>
           <div className="btn_text">
             <p>STEP 3</p>
             <h1>Add-ONS</h1>
           </div>
         </div>
         <div className="button_div">
-          <button>{currentButton[3]}</button>
+          <button className={`${currentPage === 3 ? "active" : ""}`}>
+            {currentButton[3]}
+          </button>
           <div className="btn_text">
             <p>STEP 4</p>
             <h1>SUMMARY</h1>
@@ -38,23 +62,15 @@ const MainContainer = () => {
         </div>
       </div>
       <div className="input_section">
-        <div>
-          <h1>Personal info</h1>
-          <p>Please provide your name, email address, and phone number</p>
-        </div>
-
-        <div className="inputs">
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name" />
-          <label htmlFor="email">Email Adress</label>
-          <input type="text" id="email" />
-          <label htmlFor="phone">Phone Number</label>
-          <input type="number" id="phone" placeholder="e.g. +1 234 567 890" />
-        </div>
+        {currentPage === 0 && <Form />}
+        {currentPage === 1 && <Plan />}
+        {currentPage === 2 && <AddOns />}
+        {currentPage === 3 && <Summary />}
 
         <div className="button">
-          <div></div>
-          <button>Next Step</button>
+          {!currentPage > 0 && <div></div>}
+          {currentPage > 0 && <span onClick={backStepHandler}>Go back</span>}
+          <button onClick={nextStepHandler}>Next Step</button>
         </div>
       </div>
     </div>

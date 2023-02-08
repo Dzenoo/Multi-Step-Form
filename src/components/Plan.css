@@ -1,0 +1,25 @@
+.plan_section {
+  padding: 20px;
+}
+
+.items {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.items .item {
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 13px;
+  padding: 20px;
+  width: 600px;
+  cursor: pointer;
+  flex-wrap: wrap;
+}
+
+.items .item:hover,
+.items .item.checked {
+  border: 1px solid hsl(243, 100%, 62%);
+  background-color: hsl(217, 100%, 97%);
+}
