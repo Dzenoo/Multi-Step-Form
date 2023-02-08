@@ -4,6 +4,8 @@ import img0 from "../assets/images/icon-arcade.svg";
 import img1 from "../assets/images/icon-advanced.svg";
 import img2 from "../assets/images/icon-pro.svg";
 
+import { BsToggleOn } from "react-icons/bs";
+
 import "./Plan.css";
 
 const Plan = () => {
@@ -39,6 +41,12 @@ const Plan = () => {
           <h3>Pro</h3>
           <p>$15/mo</p>
         </div>
+      </div>
+
+      <div className="toggle">
+        <h3>Yearly</h3>
+        <BsToggleOn />
+        <h3>Monthly</h3>
       </div>
     </div>
   );

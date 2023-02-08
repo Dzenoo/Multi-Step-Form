@@ -1,5 +1,8 @@
 .plan_section {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .items {
@@ -12,7 +15,9 @@
 .items .item {
   border: 1px solid hsl(229, 24%, 87%);
   border-radius: 13px;
-  padding: 20px;
+  padding: 30px;
+  display: block;
+  color: hsl(213, 96%, 18%);
   width: 600px;
   cursor: pointer;
   flex-wrap: wrap;
@@ -22,4 +27,20 @@
 .items .item.checked {
   border: 1px solid hsl(243, 100%, 62%);
   background-color: hsl(217, 100%, 97%);
+}
+
+.plan_section .toggle {
+  margin: 60px auto;
+  background-color: hsl(217, 100%, 97%);
+  text-align: center;
+  padding: 6px 130px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 40px;
+}
+
+.plan_section .toggle h3 {
+  font-size: 16px;
+  color: hsl(213, 96%, 18%);
 }
