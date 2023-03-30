@@ -4,7 +4,6 @@ import "./AddOns.css";
 
 const Plan = () => {
   const appCtx = useContext(AppContext);
-
   const { adds, setAdds } = appCtx;
 
   return (
