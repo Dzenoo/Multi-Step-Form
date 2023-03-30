@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./Form.css";
 
-const isEmpty = (value) => value.trim() !== "";
+const isEmpty = (value) => value.trim().length >= 3;
 
 const Form = () => {
   const [name, setName] = useState("");

@@ -6,6 +6,7 @@ export const AppProvider = ({ children }) => {
   const [plan, setPlan] = useState([""]);
   const [adds, setAdds] = useState([]);
   const [currentPage, setcurrentPage] = useState(0);
+  const [changePlanMonth, setchangePlanMonth] = useState(false);
 
   const nextStepHandler = () => {
     setcurrentPage((prevPage) => prevPage + 1);
@@ -28,6 +29,8 @@ export const AppProvider = ({ children }) => {
         nextStepHandler,
         backStepHandler,
         currentPage,
+        changePlanMonth,
+        setchangePlanMonth,
         setcurrentPage,
       }}
     >

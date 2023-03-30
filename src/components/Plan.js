@@ -8,31 +8,9 @@ import img2 from "../assets/images/icon-pro.svg";
 
 import "./Plan.css";
 
-// const DUMMY_PLANS = [
-//   {
-//     id: 1,
-//     icon: img0,
-//     title: "Arcade",
-//     price: 9,
-//   },
-//   {
-//     id: 2,
-//     icon: img1,
-//     title: "Advanced",
-//     price: 12,
-//   },
-//   {
-//     id: 3,
-//     icon: img2,
-//     title: "Pro",
-//     price: 15,
-//   },
-// ];
-
 const Plan = () => {
-  const appCtx = useContext(AppContext);
-
-  const { plan, setPlan } = appCtx;
+  const { plan, setPlan, changePlanMonth, setchangePlanMonth } =
+    useContext(AppContext);
 
   return (
     <div className="plan_section">
@@ -41,34 +19,54 @@ const Plan = () => {
 
       <div className="items">
         <div
-          className={`item ${plan === "Arcade, $9/mo" ? "checked" : ""}`}
-          onClick={() => setPlan("Arcade, $9/mo")}
+          className={`item ${
+            plan === `Arcade, ${changePlanMonth ? "$20/mo" : "$9/yr"}`
+              ? "checked"
+              : ""
+          }`}
+          onClick={() =>
+            setPlan(changePlanMonth ? "Arcade, $20/mo" : "Arcade, $9/yr")
+          }
         >
           <img src={img0} alt="ico" />
           <h3>Arcade</h3>
-          <p>$9/mo</p>
+          <p>{changePlanMonth ? "$20/mo" : "$9/yr"}</p>
         </div>
         <div
-          className={`item ${plan === "Advanced, $12/mo" ? "checked" : ""}`}
-          onClick={() => setPlan("Advanced, $12/mo")}
+          className={`item ${
+            plan === `Advanced, ${changePlanMonth ? "$42/mo" : "$18/yr"}`
+              ? "checked"
+              : ""
+          }`}
+          onClick={() =>
+            setPlan(changePlanMonth ? "Advanced, $42/mo" : "Advanced, $18/yr")
+          }
         >
           <img src={img1} alt="ico" />
           <h3>Advanced</h3>
-          <p>$12/mo</p>
+          <p>{changePlanMonth ? "$42/mo" : "$18/yr"}</p>
         </div>
         <div
-          className={`item ${plan === "Pro, $15/mo " ? "checked" : ""}`}
-          onClick={() => setPlan("Pro, $15/mo")}
+          className={`item ${
+            plan === `Pro, ${changePlanMonth ? "$60/mo" : "$28/yr"}`
+              ? "checked"
+              : ""
+          }`}
+          onClick={() =>
+            setPlan(changePlanMonth ? "Pro, $60/mo" : "Pro, $28/yr")
+          }
         >
           <img src={img2} alt="ico" />
           <h3>Pro</h3>
-          <p>$15/mo</p>
+          <p>{changePlanMonth ? "$60/mo" : "$28/yr"}</p>
         </div>
       </div>
 
       <div className="toggle">
         <h3>Yearly</h3>
-        <BsToggleOn />
+        <button onClick={() => setchangePlanMonth(!changePlanMonth)}>
+          {changePlanMonth ? ">" : "<"}
+        </button>
         <h3>Monthly</h3>
       </div>
     </div>
